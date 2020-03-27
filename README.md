@@ -38,9 +38,9 @@ export PYSPARK_PYTHON=python3
 $SPARK_PATH/bin/pyspark --master local[2]
 } 
 ```
-Execute o comando source 
+Execute o comando
 ```
-$ ~/.bashrc
+~/.bashrc
 ```
 
 Configurar o spark para rodar no python3. Encontre o arquivo /home/spark/conf/spark-env.sh e adicione as linhas abaixo.
