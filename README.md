@@ -78,8 +78,14 @@ sqlContext = HiveContext(sc)
 ### Referencias:
 
 http://spark.apache.org/downloads.html
+
 https://pypi.org/project/pyspark/
+
 https://medium.com/tinghaochen/how-to-install-pyspark-locally-94501eefe421
+
 https://medium.com/@brajendragouda/installing-apache-spark-on-ubuntu-pyspark-on-juputer-ca8e40e8e655
+
 https://medium.com/@GalarnykMichael/install-spark-on-ubuntu-pyspark-231c45677de0
+
 https://stackoverflow.com/questions/46286436/running-pyspark-after-pip-install-pyspark/49587560
+
