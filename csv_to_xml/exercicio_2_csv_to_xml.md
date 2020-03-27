@@ -1,12 +1,14 @@
-Abrir um terminal linux
+## Passo a passo para resolver o exercicio 2 
 
+Abrir um terminal linux eexecutar
+```
 pyspark --packages com.databricks:spark-xml_2.12:0.6.0
-
+```
 
 
 foto1.png
 
-
+```
 from pyspark.sql.column import Column, _to_java_column
 from pyspark.sql.types import _parse_datatype_json_string
 def ext_from_xml(xml_column, schema, options={}):
@@ -31,13 +33,15 @@ import pyspark
 from pyspark.sql.functions import *
 from pyspark.sql import SparkSession
 spark=SparkSession.builder.appName("experian").getOrCreate()
-
+```
+Carregando um arquivo .xml para teste
+```
 fx_1 = spark.read.format('com.databricks.spark.xml').options(rowTag='book').load("/home/ribeiro/apache_spark/books.xml")
 fx_1.show()
-
+```
 
 foto2.png
-
+```
 df = spark.read.format('csv').options(header='true', inferSchema='true', delimiter = ";").load('/home/ribeiro/apache_spark/2020_20200322_Viagens/2020_Viagem.csv')
 
 for col in df.columns:                                                      
@@ -52,7 +56,9 @@ df = df.withColumnRenamed('Situa��o','Situacao')\
         .withColumnRenamed('Valor_di�rias','Valor_diarias') 
 
 df.printSchema()
-
+```
 foto3.png
-
-df.write.format("com.databricks.spark.xml").option("rootTag", "Serasa").option("rowTag", "passagem").save("/home/ribeiro/apache_spark/passagem_new.xml")
+```
+#  escrevendo o resultado no formato .xml
+df.write.format("com.databricks.spark.xml").option("rootTag", "Serasa").option("rowTag", "passagem").save("/resultados/res_2/passagem.xml")
+```
