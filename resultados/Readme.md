@@ -1,6 +1,6 @@
 ## Exercicios propostos
 
-#### A resolução dos exercícios, exceto o exercicio 2, foram feitos no jupyter notebook e se encontram na pasta da raiz desse repositório. O exercício 2 foi feito no próprio pyspark shell e sua resolução se encontra na pasta /exercício_2_csv_to_xml/
+#### A resolução dos exercícios, exceto o exercicio 2, foram feitos no jupyter notebook e se encontram nesta pasta. O exercício 2 foi feito no próprio pyspark shell e sua resolução se encontra na pasta /exercício_2_csv_to_xml/
 
 1) Ler CSV Viagens e gerar output Parquet
 
