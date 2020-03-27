@@ -13,3 +13,5 @@
 5) Ler CSV e apresentar o total gasto por orgao solicitante onde a Situação for igual a Realizada (utilizar a coluna valor total que foi criada no item 4)
 
 6) Ler CSV de viagens e de trechos. Selecionar os campos Id do processo de viagem, situação, nome do órgão superior, sequência trecho, destino - cidade. Salvar um JSON de outpout
+
+#### Todas as respostas se econtram nas suas respectivas pasta dentro de /resultados
