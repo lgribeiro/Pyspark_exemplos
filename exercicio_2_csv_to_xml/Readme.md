@@ -1,6 +1,6 @@
 ## Passo a passo para resolver o exercicio 2 
 
-Abrir um terminal linux eexecutar
+Abrir um terminal linux e executar
 ```
 pyspark --packages com.databricks:spark-xml_2.12:0.6.0
 ```
@@ -59,7 +59,8 @@ df.printSchema()
 ```
 ![](imagens/foto3.png)
 
+Escrevendo o resultado no formato .xml
+
 ```
-#  escrevendo o resultado no formato .xml
 df.write.format("com.databricks.spark.xml").option("rootTag", "Serasa").option("rowTag", "passagem").save("/resultados/res_2/passagem.xml")
 ```
