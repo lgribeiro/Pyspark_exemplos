@@ -4,8 +4,7 @@ Projeto com exemplos de problemas de análise e manipulação de dados com pytho
 ## Instalação passa-a-passo do Pyspark no linux LTS 16.04
 
 ### 1. Instalando python3.6
-
-Interessante é criar ambiente isolado de desenvolvimento Python3, as famosas 'envs' (ambiente virttual). Abaixo alguns tutoriais de como criar a sua env.
+Uma boa prática de programação é criar um ambiente isolado de desenvolvimento para o Python3, as 'envs' (ambiente virttual). Abaixo alguns tutoriais de como criar a uma env.
 
 https://virtualenvwrapper.readthedocs.io/en/latest/
 https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais
@@ -18,9 +17,9 @@ http://spark.apache.org/downloads.html
 
 ### 3. Instalando o pyspark
 
-Entre na sua env criado no passo 1. Execute o comando com o pip
+Entre na sua env criada no passo 1. Execute o comando com o pip
 $ pip install pyspark
-Após terminar a instalação acima, abrir o vim ~/.bashrc e copiar os codigos abaixo 
+Após terminar a instalação acima, abrir no seu editor de texto o  ~/.bashrc e copiar os códigos abaixo 
 ```
 export SPARK_HOME="/home/spark/"
 export PATH="$SPARK_HOME/bin:$PATH" 
@@ -72,10 +71,10 @@ sqlContext = HiveContext(sc)
 ```
 ### Inicialize o jupyter-notebook e teste o pyspark como acima!
 
-## Parabens!! O ambiente esta pronto para o estudo!! \0/
+### Parabens!! O ambiente esta pronto para o estudo!! \0/
 
 
-### Referencias:
+## Referencias:
 
 http://spark.apache.org/downloads.html
 
