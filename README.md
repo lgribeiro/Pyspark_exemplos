@@ -3,13 +3,6 @@ Projeto com exemplos de problemas de análise e manipulação de dados com pytho
 
 ## Instalação passa-a-passo do Pyspark no linux LTS 16.04
 
-### Passo a passo:
-### 1. Instalando Python3.6
-### 2. Download Spark
-### 3. Instalando pyspark
-### 4. Executando pyspark
-
-
 ### 1. Instalando python3.6
 
 Interessante é criar ambiente isolado de desenvolvimento Python3, as famosas 'envs' (ambiente virttual). Abaixo alguns tutoriais de como criar a sua env.
