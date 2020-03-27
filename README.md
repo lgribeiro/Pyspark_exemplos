@@ -53,7 +53,7 @@ export PYSPARK_DRIVER_PYTHON=python3
 
 Execute no terminal o comando 
 ```
-$ pyspark
+pyspark
 ```
 Tete o Pyspark
 ```
