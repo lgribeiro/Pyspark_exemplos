@@ -4,7 +4,7 @@ Projeto com exemplos de problemas de análise e manipulação de dados com pytho
 ## Instalação passa-a-passo do Pyspark no linux LTS 16.04
 
 ### 1. Instalando python3.6
-Uma boa prática de programação é criar um ambiente isolado de desenvolvimento para o Python3, as 'envs' (ambiente virttual). Abaixo alguns tutoriais de como criar a uma env.
+Uma boa prática de programação é criar um ambiente isolado de desenvolvimento para o Python3 e suas dependências (Virtual Environments - env). Abaixo alguns tutoriais de como criar um ambiente virtual.
 
 https://virtualenvwrapper.readthedocs.io/en/latest/
 https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais
