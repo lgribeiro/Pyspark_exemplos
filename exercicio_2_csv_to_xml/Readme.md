@@ -5,8 +5,7 @@ Abrir um terminal linux eexecutar
 pyspark --packages com.databricks:spark-xml_2.12:0.6.0
 ```
 
-
-foto1.png
+![](imagens/foto1.png)
 
 ```
 from pyspark.sql.column import Column, _to_java_column
@@ -40,7 +39,8 @@ fx_1 = spark.read.format('com.databricks.spark.xml').options(rowTag='book').load
 fx_1.show()
 ```
 
-foto2.png
+![](imagens/foto2.png)
+
 ```
 df = spark.read.format('csv').options(header='true', inferSchema='true', delimiter = ";").load('/home/ribeiro/apache_spark/2020_20200322_Viagens/2020_Viagem.csv')
 
@@ -57,7 +57,8 @@ df = df.withColumnRenamed('Situa��o','Situacao')\
 
 df.printSchema()
 ```
-foto3.png
+![](imagens/foto3.png)
+
 ```
 #  escrevendo o resultado no formato .xml
 df.write.format("com.databricks.spark.xml").option("rootTag", "Serasa").option("rowTag", "passagem").save("/resultados/res_2/passagem.xml")
