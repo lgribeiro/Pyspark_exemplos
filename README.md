@@ -56,7 +56,7 @@ Execute no terminal o comando
 ```
 pyspark
 ```
-Tete o Pyspark
+Teste o Pyspark
 ```
 import pyspark
 
