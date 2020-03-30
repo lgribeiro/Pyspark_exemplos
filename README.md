@@ -63,13 +63,6 @@ import pyspark
 spark = pyspark.sql.SparkSession.builder.appName('test').getOrCreate()
 spark.range(10).collect() 
 
-# importando alguns modulos
-from pyspark import SparkConf
-from pyspark.sql import SparkSession
-from pyspark.sql import HiveContext# Initialize Saprk Session
-spark=SparkSession.builder.appName("PySpark_Testing").getOrCreate()
-sc = spark.sparkContext
-sqlContext = HiveContext(sc)
 ```
 ### Inicialize o jupyter-notebook e teste o pyspark como acima!
 
