@@ -1,6 +1,6 @@
 ## Passo a passo para resolver o exercicio 2 
 
-Abrir um terminal linux e executar
+Nesta pasta abrir um terminal linux e executar
 ```
 pyspark --packages com.databricks:spark-xml_2.12:0.6.0
 ```
@@ -35,14 +35,14 @@ spark=SparkSession.builder.appName("experian").getOrCreate()
 ```
 Carregando um arquivo .xml para teste
 ```
-fx_1 = spark.read.format('com.databricks.spark.xml').options(rowTag='book').load("/home/ribeiro/apache_spark/books.xml")
+fx_1 = spark.read.format('com.databricks.spark.xml').options(rowTag='book').load("books.xml")
 fx_1.show()
 ```
 
 ![](imagens/foto2.png)
 
 ```
-df = spark.read.format('csv').options(header='true', inferSchema='true', delimiter = ";").load('/home/ribeiro/apache_spark/2020_20200322_Viagens/2020_Viagem.csv')
+df = spark.read.format('csv').options(header='true', inferSchema='true', delimiter = ";").load('../../viagens_csv/2020_Viagem.csv')
 
 for col in df.columns:                                                      
    df = df.withColumnRenamed(col,col.replace(" ", "_"))
@@ -62,5 +62,7 @@ df.printSchema()
 Escrevendo o resultado no formato .xml
 
 ```
-df.write.format("com.databricks.spark.xml").option("rootTag", "Serasa").option("rowTag", "passagem").save("/resultados/res_2/passagem.xml")
+
+
+df.write.format("com.databricks.spark.xml").option("rootTag", "Serasa").option("rowTag", "passagem").save("../resultados/res_2/passagem.xml")
 ```
