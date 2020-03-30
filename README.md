@@ -19,9 +19,11 @@ http://spark.apache.org/downloads.html
 
 Entre na sua env criada no passo 1. Execute o comando com o pip
 $ pip install pyspark
-Após terminar a instalação acima, abrir no seu editor de texto o  ~/.bashrc e copiar os códigos abaixo 
+Após terminar a instalação acima, abrir no seu editor de texto o  ~/.bashrc e copiar os códigos abaixo
+Encontre a versão do py4j na pasta spark/python/lib, para colocar no codigo abaixo ex: py4j-0.10.8.1-src.zip 
 ```
 export SPARK_HOME="/home/spark/"
+export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-<version>-src.zip:$PYTHONPATH
 export PATH="$SPARK_HOME/bin:$PATH" 
 
 function snotebook () 
@@ -40,7 +42,7 @@ $SPARK_PATH/bin/pyspark --master local[2]
 ```
 Execute o comando
 ```
-~/.bashrc
+source ~/.bashrc
 ```
 
 Configurar o spark para rodar no python3. Encontre o arquivo /home/spark/conf/spark-env.sh e adicione as linhas abaixo.
