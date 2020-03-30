@@ -8,34 +8,18 @@ pyspark --packages com.databricks:spark-xml_2.12:0.6.0
 ![](imagens/foto1.png)
 
 ```
-from pyspark.sql.column import Column, _to_java_column
-from pyspark.sql.types import _parse_datatype_json_string
-def ext_from_xml(xml_column, schema, options={}):
-     java_column = _to_java_column(xml_column.cast('string'))
-     java_schema = spark._jsparkSession.parseDataType(schema.json())
-     scala_map = spark._jvm.org.apache.spark.api.python.PythonUtils.toScalaMap(options)
-     jc = spark._jvm.com.databricks.spark.xml.functions.from_xml(
-         java_column, java_schema, scala_map)
-     return Column(jc)
-
-def ext_schema_of_xml_df(df, options={}):
-     assert len(df.columns) == 1
-     scala_options = spark._jvm.PythonUtils.toScalaMap(options)
-     java_xml_module = getattr(getattr(
-         spark._jvm.com.databricks.spark.xml, "package$"), "MODULE$")
-     java_schema = java_xml_module.schema_of_xml_df(df._jdf, scala_options)
-     return _parse_datatype_json_string(java_schema.json())
-
-
-
 import pyspark
 from pyspark.sql.functions import *
 from pyspark.sql import SparkSession
+from os.path import  exists, isdir
+from os import makedirs, mkdir
+
 spark=SparkSession.builder.appName("experian").getOrCreate()
 ```
 Carregando um arquivo .xml para teste
 ```
 fx_1 = spark.read.format('com.databricks.spark.xml').options(rowTag='book').load("books.xml")
+
 fx_1.show()
 ```
 
@@ -44,8 +28,9 @@ fx_1.show()
 ```
 df = spark.read.format('csv').options(header='true', inferSchema='true', delimiter = ";").load('../../viagens_csv/2020_Viagem.csv')
 
-for col in df.columns:                                                      
+for col in df.columns:
    df = df.withColumnRenamed(col,col.replace(" ", "_"))
+
 df = df.withColumnRenamed('Situa��o','Situacao')\
         .withColumnRenamed('C�digo_do_�rg�o_superior','Codigo_do_orgao_superior')\
         .withColumnRenamed('Nome_do_�rg�o_superior','Nome_do_orgao_superior')\
@@ -62,7 +47,8 @@ df.printSchema()
 Escrevendo o resultado no formato .xml
 
 ```
-
+if not exists('../resultados/res_2/'):
+    makedirs('../resultados/res_2/')
 
 df.write.format("com.databricks.spark.xml").option("rootTag", "Serasa").option("rowTag", "passagem").save("../resultados/res_2/passagem.xml")
 ```
